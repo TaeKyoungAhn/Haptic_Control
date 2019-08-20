@@ -2,9 +2,6 @@
 
 Haptic Controller API
 =====================
-This project is an API for Haptic Control.
--------------------------------------------------------
-
 
 # [Environment]
 <pre><code>
