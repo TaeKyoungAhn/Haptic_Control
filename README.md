@@ -16,7 +16,7 @@ Haptic Controller API
    ----------------------------------------------
 # [Method]
 
-  Messages
+ '''CSharp
   <pre><code>
   
   D2PMessages.cs
