@@ -125,7 +125,7 @@ Haptic Controller API
         private void HapconPort1_DataReceivedEvent(object sender, Message msg)
         // Serialport 2 Datareceive Event
         private void HapconPort2_DataReceivedEvent(object sender, Message msg)
-  </code></pre>
+  </pre></code>
   
   
   
