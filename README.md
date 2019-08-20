@@ -138,9 +138,8 @@ Haptic Controller API
         public event ErrorEventHandler ErrorEvent;
         public event DisconnectedEventHanlder DisconnectedEvent
         
-        
-   #Fields
-   
+    #Fields
+    
         private bool IsDisposed;
 
         public bool IsOpen { get; private set; }
@@ -158,12 +157,12 @@ Haptic Controller API
         private Stopwatch DataReceiveTimer;
         private DispatcherTimer DataIntervalTimer;
         
-   #Constructor
+    #Constructor
    
        //SerialPort Connection setting
        internal HapconSerialPort(PortType type, string portName, int baudRate, Parity parity, int dataBits, StopBits stopBits)
        
-   #Methods     
+    #Methods     
    
        //SerialPort Open 
         public void Open()
@@ -172,13 +171,13 @@ Haptic Controller API
        //P2D InvokeCommand
         public void InvokeCommand(string wheel, string button, int cmd, int vib, int interval)
         
-   #Event Handler
+    #Event Handler
        //Serial DATA Process
         private void InnerSerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
        //Data Interval 
         private void DataIntervalTimer_Tick(object sender, EventArgs e)
         
-   #IDisposable Interface Member
+    #IDisposable Interface Member
        
         public void Dispose()
         protected void Dispose(bool disposing)
