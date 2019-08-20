@@ -16,7 +16,7 @@ Haptic Controller API
    ----------------------------------------------
 # [Method]
 
- '''CSharp
+ Message
   <pre><code>
   
   D2PMessages.cs
@@ -42,7 +42,7 @@ Haptic Controller API
            D2P,
            P2D
         }
-      </pre></code>
+    </pre></code>
 
   --------------------------------------------------------------------------------------
   HapconController.cs
@@ -125,6 +125,62 @@ Haptic Controller API
         // Serialport 2 Datareceive Event
         private void HapconPort2_DataReceivedEvent(object sender, Message msg)
  
+----------------------------------------------------------------------------------------------------------
+  HapconSerialPort.cs
+    
+    #Events
+    
+        // Data Parsing Success Event
+        public delegate void DataReceivedEventHandler(object sender, Message msg);
+        public event DataReceivedEventHandler DataReceivedEvent;
+        //other Event
+        public event ConnectedEventHandler ConnectedEvent;
+        public event ErrorEventHandler ErrorEvent;
+        public event DisconnectedEventHanlder DisconnectedEvent
+        
+        
+   #Fields
+   
+        private bool IsDisposed;
 
-  
-  
+        public bool IsOpen { get; private set; }
+
+        private int BaudRate;
+        private Parity Parity;
+        private int DataBits;
+        private StopBits StopBits;
+        private string PortName;
+
+        public PortType PortType { get; private set; }
+
+        private TimeSpan Timeout = TimeSpan.FromMilliseconds(1000);
+        private TimeSpan DataReceivedTime;
+        private Stopwatch DataReceiveTimer;
+        private DispatcherTimer DataIntervalTimer;
+        
+   #Constructor
+   
+       //SerialPort Connection setting
+       internal HapconSerialPort(PortType type, string portName, int baudRate, Parity parity, int dataBits, StopBits stopBits)
+       
+   #Methods     
+   
+       //SerialPort Open 
+        public void Open()
+       //Serial Port Close
+        public void Close()
+       //P2D InvokeCommand
+        public void InvokeCommand(string wheel, string button, int cmd, int vib, int interval)
+        
+   #Event Handler
+       //Serial DATA Process
+        private void InnerSerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+       //Data Interval 
+        private void DataIntervalTimer_Tick(object sender, EventArgs e)
+        
+   #IDisposable Interface Member
+       
+        public void Dispose()
+        protected void Dispose(bool disposing)
+        
+       
