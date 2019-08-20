@@ -42,12 +42,11 @@ Haptic Controller API
            D2P,
            P2D
         }
-    
-  </code>
-  
-  
+      </pre></code>
+
+  --------------------------------------------------------------------------------------
   HapconController.cs
-  <code>
+  
     # Singleton Pattern
     
     public static HapconController Instance
@@ -126,6 +125,6 @@ Haptic Controller API
         // Serialport 2 Datareceive Event
         private void HapconPort2_DataReceivedEvent(object sender, Message msg)
  
-  </pre></code>
+
   
   
