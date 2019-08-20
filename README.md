@@ -43,7 +43,7 @@ Haptic Controller API
            P2D
         }
     
-  </code><pre>
+  </code>
   
   
   HapconController.cs
@@ -126,6 +126,6 @@ Haptic Controller API
         // Serialport 2 Datareceive Event
         private void HapconPort2_DataReceivedEvent(object sender, Message msg)
  
-  </code>
+  </pre></code>
   
   
