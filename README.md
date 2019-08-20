@@ -11,10 +11,12 @@ This project is an API for Haptic Control.
   Operating system :  Window 10
   Tool : Visual Studio 2017
   
-  
+  -----------------------------------------------
 # [Nuget Pakage]
 
    MVVMMLight
    
-   
+   ----------------------------------------------
 # [Method]
+  
+  
